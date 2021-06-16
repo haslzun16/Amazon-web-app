@@ -1,4 +1,5 @@
 # Amazon-web-app
+* The purpose of this application is to create a Amazon clone Web application. This application is an ecomerce site where customers can view and shop products.
 
 ## What I learned
 
