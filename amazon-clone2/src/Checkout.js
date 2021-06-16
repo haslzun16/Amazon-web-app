@@ -1,0 +1,41 @@
+import React from "react";
+import "./Checkout.css";
+import CheckoutProduct from "./CheckoutProduct";
+import { useStateValue } from "./StateProvider";
+import Subtotal from "./Subtotal";
+// import FlipMove from "react-flip-move";
+
+function Checkout() {
+  const [{ basket, user }, dispatch] = useStateValue();
+  console.log("the basket has>>>", basket);
+  return (
+    <div className="checkout">
+      <div class="checkout__left">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsZGt59A5Sl5pFwz9_zET7ETTf4-R43j-NKSNScRnu1W_c3vN1CDGngf4ExgYMw25AEg&usqp=CAU"
+          alt=""
+          class="checkout__ad"
+        />
+        <div>
+          <h3>Hello, {user.email}</h3>
+          <h2 class="checkout__title">Your shopping Basket</h2>
+
+          {basket.map((item) => (
+            <CheckoutProduct
+              id={item.id}
+              title={item.title}
+              image={item.image}
+              price={item.price}
+              rating={item.rating}
+            />
+          ))}
+        </div>
+      </div>
+      <div class="checkout__right">
+        <Subtotal />
+      </div>
+    </div>
+  );
+}
+
+export default Checkout;

@@ -12,6 +12,10 @@
     min-width: 100px;
 
 }
+.product__rating{
+    display: flex;
+
+}
 
 .product > img {
     max-height: 200px;
@@ -26,8 +30,8 @@
 }
 
 .product__price{
-    height: 100px;
-    margin-bottom: 15px;
+    
+    /* margin-bottom: 15px; */
 }
 
 .product > button {
